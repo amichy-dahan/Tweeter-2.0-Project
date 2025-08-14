@@ -8,7 +8,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 800px;
+     width: 100%;
+    max-width: 800px;
   
     background-color:rgb(0, 0, 0); ;
     border-radius: 5px;
@@ -39,9 +40,15 @@
     right: 0;
     width: 70px;
     height: 70px; 
-    border-top: 1px solid white;
+    background-color: black;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+    display: flex;
+    border-top: 1px solid white;
+    border-left:none ;
+    
+    
+    align-items: center;
 }
 .btnSharePost:hover{
 
@@ -50,7 +57,7 @@
     right: 0;
     width: 70px;
     height: 70px; 
-    border-top: 1px solid white;
+   
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     box-shadow: 1px 1px 10px rgb(255, 255, 255);
@@ -76,4 +83,107 @@
     border-radius: 50%;
     box-shadow: 1px 1px 10px gray;
     
+}
+
+.containerOfTweets{
+  
+    width: 800px;
+    margin-top: 75px;
+  
+}
+
+.xImge-b{
+    
+    width: 58px;
+    height: 58px; 
+    
+}
+.disable{
+
+      position: absolute;
+    top: 100%;
+    right: 0;
+    width: 70px;
+    height: 70px; 
+    background-color: black;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    border-top: 1px solid white;
+    border-left:none ;
+    align-items: center;
+   box-shadow: 1px 1px 10px rgb(225, 0, 0);
+    transition: 0.3s ease;
+}
+.disable:hover{
+
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 70px;
+    height: 70px; 
+   
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  
+}
+
+.errChar{
+    border: 1px solid red;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    font-size: 18px;
+    background-color: rgb(225, 49, 49);
+     transition: 0.3s ease;
+
+}
+
+
+@media (max-width: 768px) {
+    .container-tweeter, .containerOfTweets {
+        width: 95%; /* מתכווץ למסכים קטנים */
+    }
+
+    .btnSharePost, .disable {
+        width: 50px;
+        height: 50px;
+        top: 100%;
+        right: 0;
+    }
+
+    .input-post {
+        font-size: 14px; /* פונט קטן יותר למובייל */
+        padding: 6px;
+    }
+
+    .xImge {
+        width: 80px;
+        height: 80px;
+    }
+
+    .xImge-b {
+        width: 40px;
+        height: 40px;
+    }
+
+    .btnSharePost:hover{
+
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 50px;
+    height: 50px; 
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 1px 1px 10px rgb(255, 255, 255);
+    
+}
+
+.containerOfTweets{
+  
+    width: 250px;
+    margin-top: 75px;
+  
+}
 }
