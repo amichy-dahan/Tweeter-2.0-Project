@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center;
      width: 100%;
-    max-width: 800px;
+    
   
     background-color:rgb(0, 0, 0); ;
     border-radius: 5px;
@@ -138,6 +138,17 @@
      transition: 0.3s ease;
 
 }
+.sendChar{
+    border: 1px solid rgb(37, 146, 41);
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    font-size: 18px;
+    background-color: rgb(225, 49, 49);
+     transition: 0.3s ease;
+
+}
+
 
 
 @media (max-width: 768px) {

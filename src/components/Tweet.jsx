@@ -6,11 +6,11 @@ function Tweet({props}) {
          <div className="container-post">
 
             <div className='details'>
-               <p>{props.name}</p>
+               <p>{props.userName}</p>
                <p>{props.date} </p>
             </div>
             <div className='thePostText'>
-                {props.text}  
+                {props.content}  
             </div>
                    
      

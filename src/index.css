@@ -1,5 +1,7 @@
 
-
+*{
+  box-sizing: border-box;
+}
 
 body {
  
@@ -7,6 +9,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
- 
+  width: 800px;
+  margin: auto;
+  border: 1px solid white;
   color: rgb(255, 255, 255);
 }

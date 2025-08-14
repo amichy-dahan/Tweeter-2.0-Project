@@ -2,73 +2,27 @@ import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import xImage from './x.jpg';
-import Tweet from './components/Tweet';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Tweeter from './components/Tweeter';
+import "./App.css";
+import Profile from './components/Profile';
+import Navbar from './components/Navbar';
 
-
-let userName = "amichy"
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVja21nZHpubnNudXN2bXlmdnNiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ0ODU5NjAsImV4cCI6MjA3MDA2MTk2MH0.D82S0DBivlsXCCAdpTRB3YqLqTOIP7MUj-p1R8Lj9Jo";
 function App() {
-  const [tweet, setTweet] = useState("")
-  const [tweets, setTweets] = useState([]);
-
-
-  useEffect(() => {
-    const listTweet = localStorage.getItem("tweets")
-    console.log(listTweet)
-    if (listTweet !== "[]") {
-      setTweets(JSON.parse(listTweet));
-    }
-  }, [])
-
-  useEffect(() => {
-    localStorage.setItem("tweets", JSON.stringify(tweets))
-
-  }, [tweets])
-
-
-  function handeleTwet() {
-    setTweets([
-      ...tweets,
-      {
-        name: userName,
-        text: tweet,
-        date: new Date().toLocaleDateString()
-      }
-    ]);
-    setTweet("");
-  }
-
-  return (
+  return(
     <>
-      <div className='container-x'>
-        <img className='xImge' src={xImage} />
-      </div>
-   <button  onClick={()=> localStorage.removeItem('tweets')}>clear local storage</button>
-      <div className='container-tweeter'>
-        <textarea
-          className='input-post'
-          rows="10"
-          value={tweet}
-          onChange={(e) => setTweet(e.target.value)}
-          placeholder="What you Have in mind .."
-        />
-        {
-          tweet.length > 140 ? 
-          <div className='errChar'>
-            this tweet can't cotain more then 140 chars 
-          </div> : ""
-        }
-        <button disabled={tweet.length > 140 || tweet.length === 0} className={tweet.length <= 140 ? 'btnSharePost' : 'disable'} onClick={handeleTwet}>
-          <img className='xImge-b' src={xImage} alt="tweet" />
-        </button>
-      </div>
+   
+      <BrowserRouter>
+       <Navbar/>
+      <Routes>
+        
+        <Route path="/" element={<Tweeter/>} />
+        <Route path="/profile" element={<Profile/>} />
 
-      <div className='containerOfTweets'>{tweets.map((t, index) => (
-        <Tweet key={index} props={t} />
-
-      ))
-      }</div>
-
+       
+      </Routes>
+    </BrowserRouter>
     </>
   )
 }
