@@ -1,0 +1,13 @@
+ *{
+    box-sizing: border-box;
+ }
+.profile-cont{
+    background-color: rgb(0, 0, 0);
+    
+    height: 100vh;
+}
+
+.title{
+    margin: auto;
+    padding: 20px;
+}

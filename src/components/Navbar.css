@@ -8,11 +8,12 @@
 .navbar{
     width: 100%;
     display: flex;
-    border: 1px solid white;
+
     padding-left: 35px;
     background-color: rgb(87, 86, 86);
     border: none;
-    border-radius: 8px;
+    border-top-left-radius: 8px;
+     border-top-right-radius: 8px;
 }
 .link1{
     margin-left:30px ;
@@ -25,5 +26,15 @@
 }
 .container-nav{
     width: 800px;
-    border: 1px solid white;
+    
+}
+
+@media (max-width: 768px) {
+
+.line{
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+}
+
 }

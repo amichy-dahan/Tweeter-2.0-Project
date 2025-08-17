@@ -9,15 +9,15 @@ import axios from 'axios';
 import Navbar from './Navbar';
 
 
-let userName = "amichy"
+
 const API_URL = "https://uckmgdznnsnusvmyfvsb.supabase.co/rest/v1/Tweets";
 const API_KEY =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVja21nZHpubnNudXN2bXlmdnNiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ0ODU5NjAsImV4cCI6MjA3MDA2MTk2MH0.D82S0DBivlsXCCAdpTRB3YqLqTOIP7MUj-p1R8Lj9Jo";
-function Tweeter() {
-  const [tweet, setTweet] = useState("")
+function Tweeter({name}) {
+  const [content, setContent] = useState("")
   const [tweets, setTweets] = useState([]);
-   const [loading, setLoading] = useState(false);
-
+  const [loading, setLoading] = useState(false);
+  
 
 //   useEffect(() => {
 //     const listTweet = localStorage.getItem("tweets")
@@ -44,19 +44,19 @@ function Tweeter() {
     setTweets([
       ...tweets,
       {
-        name: userName,
-        text: tweet,
+        userName: name,
+        content: content,
         date: new Date().toLocaleDateString()
       }
     ]);
-    setTweet("");
+    setContent("");
     //  if (!tweet.trim()) return; // לא שולח אם אין טקסט
     setLoading(true);
 
     // try {
     //   const newTweet = {
     //     content: tweet,
-    //     userName: userName,
+    //     userName: name,
     //     date: new Date().toISOString(),
     //   };
 
@@ -81,7 +81,7 @@ function Tweeter() {
 
   return (
     <>
-
+   <div className='head-container'>
       <div className='container-x'>
        
         <img className='xImge' src={xImage} />
@@ -91,12 +91,12 @@ function Tweeter() {
         <textarea
           className='input-post'
           rows="10"
-          value={tweet}
-          onChange={(e) => setTweet(e.target.value)}
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
           placeholder="What you Have in mind .."
         />
         {
-          tweet.length > 140 ? 
+          content.length > 140 ? 
           <div className='errChar'>
             this tweet can't cotain more then 140 chars 
           </div> :<div className={loading?'sendChar':""}>
@@ -105,7 +105,7 @@ function Tweeter() {
           
           
         }
-        <button disabled={tweet.length > 140 || tweet.length === 0} className={tweet.length <= 140 ? 'btnSharePost' : 'disable'} onClick={handeleTwet}>
+        <button disabled={content.length > 140 || content.length === 0} className={content.length <= 140 ? 'btnSharePost' : 'disable'} onClick={handeleTwet}>
           <img className='xImge-b' src={xImage} alt="tweet" />
         </button>
       </div>
@@ -115,7 +115,7 @@ function Tweeter() {
          
       ))
       }</div>
-
+   </div>
     </>
   )
 }
