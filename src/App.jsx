@@ -5,21 +5,24 @@ import Profile from './components/Profile';
 import Navbar from './components/Navbar';
 import './App.css';
 import { useState } from 'react';
+import { TweetsProvider } from "./context/TweetsProvider";
 
 function App() {
-  const [userName,setUserName] = useState("amichy")
+  const [userName, setUserName] = useState("amichy")
 
-  function changeUser(name){
+  function changeUser(name) {
     setUserName(name);
   }
   return (
     <MantineProvider withGlobalStyles withNormalizeCSS>
       <BrowserRouter>
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Tweeter name={userName} />} />
-          <Route path="/profile" element={<Profile name={userName} onChange={changeUser}/>} />
-        </Routes>
+        <TweetsProvider>
+          <Routes>
+            <Route path="/" element={<Tweeter name={userName} />} />
+            <Route path="/profile" element={<Profile name={userName} onChange={changeUser} />} />
+          </Routes>
+        </TweetsProvider>
       </BrowserRouter>
     </MantineProvider>
   );

@@ -3,36 +3,32 @@ import { useState } from 'react';
 import { Link } from "react-router-dom";
 import '../components/Profile.css'
 
-function Profile({name , onChange}) {
-    const [inputChange, setInputChange] = useState("")
-     
-    function onBtn (){
-      onChange(inputChange);
-      setInputChange("");
-    }
-return (
-   <>
+function Profile({ name, onChange }) {
+  const [inputChange, setInputChange] = useState("")
 
-   <div className='profile-cont'>
-  
-   <h1 className='title'>Profile</h1>
+  function onBtn() {
+    onChange(inputChange);
+    setInputChange("");
+  }
+  return (
+    <>
 
- <Stack spacing="md" style={{ maxWidth: 400, margin: ' auto' }}>
-     
-        <TextInput
-        label="User Name"
-        placeholder={name}
-        inputWrapperOrder={['label', 'error', 'input', 'description']}
-        value={inputChange}
-        onChange={(e)=>setInputChange(e.target.value)}
-        
-      />
+      <div className='profile-cont'>
 
-      <Button onClick={onBtn}>Save</Button>
-    </Stack>   
-     </div>
-   </>
-)
+        <h1 className='title'>Profile : Hello {name}</h1>
+
+        <div className='inBt'>
+          <input
+            placeholder={name}
+            value={inputChange}
+            className='change-user'
+            onChange={(e) => setInputChange(e.target.value)}
+          />
+          <button className='btn' onClick={onBtn}>Save</button>
+        </div>
+      </div>
+    </>
+  )
 
 
 }

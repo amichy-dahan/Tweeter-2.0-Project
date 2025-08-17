@@ -11,3 +11,55 @@
     margin: auto;
     padding: 20px;
 }
+
+.inBt{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.change-user {
+  width: 250px;
+  text-align: center;
+  padding: 10px 14px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(203, 6, 6, 0.1);
+}
+
+.change-user:focus {
+  border-color: #43baff;
+  box-shadow: 0 4px 12px rgba(151, 65, 242, 0.3);
+  width: 300px; /* גדל בהדרגה */
+}
+.btn{
+   
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    background-color: #585959;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    border: 3px solid white;
+    transition: all 0.3s ease;
+}
+.btn:hover{
+   
+ 
+    background-color: #def5f5;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    color: black;
+    border: 3px solid white;
+}
