@@ -1,7 +1,8 @@
 import { Button, Input, Stack, TextInput } from '@mantine/core';
 import { useState } from 'react';
-import { Link } from "react-router-dom";
+import { data, Link } from "react-router-dom";
 import '../components/Profile.css'
+import { supabase } from '../SupaBase';
 
 function Profile({ name, onChange }) {
   const [inputChange, setInputChange] = useState("")

@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import './App.css';
 import { useState } from 'react';
 import { TweetsProvider } from "./context/TweetsProvider";
+import { AuthenticationImage } from './components/AuthenticationImage';
 
 function App() {
   const [userName, setUserName] = useState("amichy")
@@ -14,17 +15,21 @@ function App() {
     setUserName(name);
   }
   return (
-    <MantineProvider withGlobalStyles withNormalizeCSS>
+    
       <BrowserRouter>
+      <MantineProvider withGlobalStyles withNormalizeCSS>
         <Navbar />
         <TweetsProvider>
+         
           <Routes>
-            <Route path="/" element={<Tweeter name={userName} />} />
+            <Route path="/" element={<AuthenticationImage onChanger={changeUser}/>} />
+            <Route path="/tweeter" element={<Tweeter name={userName} />} />
             <Route path="/profile" element={<Profile name={userName} onChange={changeUser} />} />
           </Routes>
         </TweetsProvider>
+        </MantineProvider>
       </BrowserRouter>
-    </MantineProvider>
+  
   );
 }
 
