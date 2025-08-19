@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import '../App.css'
 
 
-import xImage from '../x.jpg';
+
 import Tweet from '../components/Tweet';
 import axios from 'axios';
 
@@ -40,7 +40,7 @@ function Tweeter({name}) {
    <div className='head-container'>
       <div className='container-x'>
        
-        <img className='xImge' src={xImage} />
+       <img className='xImge' src="/Tweeter-2.0-Project/x.jpg" alt="x" />
       </div>
    <button  onClick={()=> localStorage.removeItem('tweets')}>clear local storage</button>
       <div className='container-tweeter'>
@@ -62,7 +62,7 @@ function Tweeter({name}) {
           
         }
         <button disabled={content.length > 140 || content.length === 0} className={content.length <= 140 ? 'btnSharePost' : 'disable'} onClick={handeleTwet}>
-          <img className='xImge-b' src={xImage} alt="tweet" />
+         <img className='xImge-b' src="/Tweeter-2.0-Project/x.jpg" alt="tweet" />
         </button>
       </div>
 
