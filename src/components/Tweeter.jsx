@@ -62,7 +62,7 @@ function Tweeter({name}) {
           
         }
         <button disabled={content.length > 140 || content.length === 0} className={content.length <= 140 ? 'btnSharePost' : 'disable'} onClick={handeleTwet}>
-          <img className='xImge-b' src={xImage} alt="tweet" />
+          <img className='xImge-b' src="/Tweeter-2.0-Project/x.jpg" alt="tweet" />
         </button>
       </div>
 
