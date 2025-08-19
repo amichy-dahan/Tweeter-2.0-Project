@@ -42,7 +42,7 @@ function Tweeter({name}) {
        
         <img className='xImge' src={xImage} />
       </div>
-
+   <button  onClick={()=> localStorage.removeItem('tweets')}>clear local storage</button>
       <div className='container-tweeter'>
         <textarea
           className='input-post'
