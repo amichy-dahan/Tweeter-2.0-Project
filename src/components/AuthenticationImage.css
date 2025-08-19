@@ -1,88 +1,117 @@
-*{box-sizing: border-box;}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-.container-login{
-    width: 800px;
-    height: 100vh;
-    background-color: black;
+body {
+    background-color: #111; /* רקע כהה יותר */
+}
+
+.container-login {
+    width: 100%;
+    max-width: 800px;
+    min-height: 100vh;
+    background-color: #000;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center; /* מרכז את התוכן אנכית */
+    padding: 20px;
 }
 
-.container-inBt{
+.container-inBt {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 400px;
-    margin-top: 200px;
-    padding: 10px;
-    border: 1px solid rgb(224, 222, 222);
-    height: 400px;
-    border-radius: 10px;
+    padding: 30px 20px;
+    border-radius: 15px;
+    background: #1c1c1c;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.in2{
-    background-color: black;
-   border: none;
-   color: white;
-   width: 100%;
-   padding: 15px;
-    border-bottom-left-radius:5px ;
-    border-bottom-right-radius:5px ;
-    border-left: 0.1px solid gray;
-    border-right: 0.1px solid gray;
-    border-bottom: 0.1px solid gray;
-    outline: none;                /* מבטל את הקו הכחול של הדפדפן */
-  transition: border 0.01s, box-shadow 0.01s;
-}
-.in1{
+
+.lab {
     width: 100%;
-     margin-top: 5px;
-    background-color: black;
-  border: 0.1px solid gray;
-  padding: 15px;
-  border-top-left-radius:5px ;
-  border-top-right-radius:5px ;
-    outline: none;                /* מבטל את הקו הכחול של הדפדפן */
-  transition: border 0.01s, box-shadow 0.01s;
-  color: #ffffff;
+    color: #fff;
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
 }
-.in1:focus {
-  border: 0.9px solid #ffffff;   /* צבע מסגרת בעת פוקוס */
-  box-shadow: 0 0 10px rgb(255, 255, 255); /* הילה עדינה */
-}
-.in2:focus {
-  border: 0.9px solid #ffffff;   /* צבע מסגרת בעת פוקוס */
-  box-shadow: 0 0 10px rgb(255, 255, 255); /* הילה עדינה */
-}
-.in1:focus::placeholder {
-   
-  color: #ffffff;  /* צבע אחר כשהשדה בפוקוס */
-  opacity: 0.7;    /* אפשר להכהות או להבהיר */
-  font-size: 14px; /* אפשר לשנות קצת את הגודל */
-}
-.in2:focus::placeholder {
-  color: #ffffff;  /* צבע אחר כשהשדה בפוקוס */
-  opacity: 0.7;    /* אפשר להכהות או להבהיר */
-  font-size: 14px; /* אפשר לשנות קצת את הגודל */
-}
-.lab{
+
+.in1, .in2 {
     width: 100%;
-    color: white;
-    font-size: 24px;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: #111;
+    color: #fff;
+    outline: none;
+    transition: all 0.3s ease;
 }
-.btnLogin{
+
+.in1:focus, .in2:focus {
+    border-color: #00bfff;
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.7);
+}
+
+.in1::placeholder, .in2::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.btnLogin {
     width: 100%;
-    padding: 12px;
-    margin-top: 10px;
+    padding: 14px;
+    margin-top: 15px;
     border-radius: 10px;
     border: none;
-    background-color: rgb(64, 63, 63);
-    color: white;
+    background: linear-gradient(145deg, #444, #222);
+    color: #fff;
+    font-weight: 600;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
-.btnLogin:hover{
-    
-    border: 0.1px solid white;
-   
+
+.btnLogin:hover {
+    background: linear-gradient(145deg, #555, #333);
+    box-shadow: 0 4px 15px rgba(0, 191, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.btnLogin:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 191, 255, 0.3);
+}
+
+
+/* ===================== Responsive ===================== */
+@media (max-width: 768px) {
+    .container-tweeter, .containerOfTweets {
+        width: 95%;
+    }
+
+    .input-post {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .btnSharePost, .disable {
+        width: 50px;
+        height: 50px;
+    }
+
+    .xImge {
+        width: 80px;
+        height: 80px;
+    }
+
+    .xImge-b {
+        width: 40px;
+        height: 40px;
+    }
 }
