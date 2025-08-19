@@ -17,7 +17,7 @@ function App() {
   }
   return (
     
-      <BrowserRouter>
+      <BrowserRouter basename="/Tweeter-2.0-Project">
       <MantineProvider withGlobalStyles withNormalizeCSS>
         {    userName !== "null" &&
               <Navbar onChangeUser={changeUser}  />
