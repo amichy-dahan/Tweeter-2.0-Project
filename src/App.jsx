@@ -7,9 +7,10 @@ import './App.css';
 import { useState } from 'react';
 import { TweetsProvider } from "./context/TweetsProvider";
 import { AuthenticationImage } from './components/AuthenticationImage';
+import ProtectedRoute from "./auth/ProtectedRoute";
 
 function App() {
-  const [userName, setUserName] = useState("amichy")
+ const [userName, setUserName] = useState("null")
 
   function changeUser(name) {
     setUserName(name);
@@ -18,13 +19,16 @@ function App() {
     
       <BrowserRouter>
       <MantineProvider withGlobalStyles withNormalizeCSS>
-        <Navbar />
-        <TweetsProvider>
-         
+        {    userName !== "null" &&
+              <Navbar onChangeUser={changeUser}  />
+              
+         }
+
+        <TweetsProvider>  
           <Routes>
             <Route path="/" element={<AuthenticationImage onChanger={changeUser}/>} />
-            <Route path="/tweeter" element={<Tweeter name={userName} />} />
-            <Route path="/profile" element={<Profile name={userName} onChange={changeUser} />} />
+            <Route path="/tweeter" element={<ProtectedRoute name = {userName}><Tweeter name={userName} /></ProtectedRoute>} />
+            <Route path="/profile" element={<ProtectedRoute name = {userName}><Profile name={userName} onChange={changeUser} /></ProtectedRoute>} />
           </Routes>
         </TweetsProvider>
         </MantineProvider>

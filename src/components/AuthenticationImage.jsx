@@ -8,20 +8,20 @@ export function AuthenticationImage({onChanger }) {
   const navigate =useNavigate();
   const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
+      const [loading, setLoading] = useState(false);
 
  async function onBtn(){
   try{
-    console.log("Trying login with:", email, password);
      const user = await supabase.auth.signInWithPassword({email:email ,password:password})
       if(user.data.user){
-        console.log(user.data.user.email)
         let res = user.data.user.email.split('@')[0];
         onChanger(res);
-        console.log(res)
         navigate("/tweeter")
       } else{
+        setEmail("")
+        setPassword("")
+        alert("uncorrect details")
         navigate("/")
-        alert("2")
       }
   } 
   catch(err){
@@ -43,7 +43,7 @@ export function AuthenticationImage({onChanger }) {
 
           <label className='lab'  htmlFor="">Please sign in <br></br><input  value={email} onChange={(e)=> setEmail(e.target.value)} placeholder='Email' className='in1'/></label>
           <input value={password} onChange={(e)=> setPassword(e.target.value)} placeholder='Passwords' className='in2' />
-          <button onClick={onBtn} className='btnLogin'>
+          <button onClick={onBtn}  className='btnLogin'>
              Sign in
           </button>
         </div>
