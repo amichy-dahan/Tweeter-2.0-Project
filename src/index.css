@@ -9,7 +9,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 800px;
+  width: 1200px;
   margin: auto;
 
   color: rgb(255, 255, 255);
@@ -17,4 +17,9 @@ body {
   /* gradient משמאל וימין */
   background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(10, 10, 10, 0) 20%, rgba(0, 0, 0, 0.3));
   z-index: 0; /* מאחורי הקונטיינר */
+}
+
+
+#root{
+  width: 1200px;
 }

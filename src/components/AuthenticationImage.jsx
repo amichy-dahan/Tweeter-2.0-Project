@@ -12,9 +12,9 @@ export function AuthenticationImage({onChanger }) {
 
  async function onBtn(){
   try{
-     const user = await supabase.auth.signInWithPassword({email:email ,password:password})
-      if(user.data.user){
-        let res = user.data.user.email.split('@')[0];
+     const user = {email:email ,password:password}
+      if(user.email){
+        let res = user.email
         onChanger(res);
         navigate("/tweeter")
       } else{
